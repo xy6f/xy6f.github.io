@@ -97,20 +97,16 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="langchain-basic"><a href="#langchain-basic" class="headerlink" title="langchain-basic"></a>langchain-basic</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>终端输入     </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install langchain</span><br><span class="line"></span><br><span class="line">pip install langchain-openai</span><br></pre></td></tr></table></figure>
-
-<h2 id="基础代理创建"><a href="#基础代理创建" class="headerlink" title="基础代理创建"></a>基础代理创建</h2><p> </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_openai <span class="keyword">import</span> ChatOpenAI</span><br><span class="line"></span><br><span class="line">llm = ChatOpenAI(</span><br><span class="line">    model_name=<span class="string">&quot;model-name&quot;</span>,<span class="comment">#模型名称</span></span><br><span class="line">    api_key=<span class="string">&quot;api-key&quot;</span>,</span><br><span class="line">    base_url=<span class="string">&quot;url&quot;</span>,</span><br><span class="line">    temperature=(<span class="number">0.0</span>-<span class="number">1.0</span>),<span class="comment">#越大输出越随机，越小输出越准确</span></span><br><span class="line">    timeout=<span class="number">60</span>,<span class="comment">#请求超时时间（s）</span></span><br><span class="line">    max_tokens=<span class="number">10</span>,<span class="comment">#最大token输出</span></span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#简单会话</span></span><br><span class="line"></span><br><span class="line">resp=llm.invoke(<span class="string">&quot;message&quot;</span>)<span class="comment">#message为人为输入，invoke接口回答</span></span><br><span class="line"><span class="built_in">print</span>(resp)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(resp))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#流式输出</span></span><br><span class="line">resp=llm.stream(<span class="string">&quot;message&quot;</span>)<span class="comment">#message为人为输入，invoke接口回答</span></span><br><span class="line"><span class="keyword">for</span> funk <span class="keyword">in</span> resp:</span><br><span class="line">    <span class="built_in">print</span>(funk, end=<span class="string">&quot;&quot;</span>, flush=<span class="literal">True</span>)</span><br><span class="line"><span class="comment">#flush=True 的核心作用是 强制立即刷新输出缓冲区，让模型的响应片段实时显示在终端 / 控制台，避免所有内容 “憋到最后一次性输出”</span></span><br><span class="line"><span class="comment">#end=&quot;\n&quot;，这里改成空字符串，就是为了不自动换行，让流式片段连起来</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">这是没有flush=true：</span></span><br><span class="line"><span class="string">模型正在流式输出：</span></span><br><span class="line"><span class="string">黑洞是宇宙中一种引力极强的天体，连光都无法从它的事件视界逃脱...</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">流式输出结束。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">这是有flush=true：</span></span><br><span class="line"><span class="string">模型正在流式输出：</span></span><br><span class="line"><span class="string">黑</span></span><br><span class="line"><span class="string">洞</span></span><br><span class="line"><span class="string">是</span></span><br><span class="line"><span class="string">宇</span></span><br><span class="line"><span class="string">宙</span></span><br><span class="line"><span class="string">中</span></span><br><span class="line"><span class="string">一</span></span><br><span class="line"><span class="string">种</span></span><br><span class="line"><span class="string">引</span></span><br><span class="line"><span class="string">力</span></span><br><span class="line"><span class="string">极</span></span><br><span class="line"><span class="string">强</span></span><br><span class="line"><span class="string">的</span></span><br><span class="line"><span class="string">天</span></span><br><span class="line"><span class="string">体</span></span><br><span class="line"><span class="string">...（持续滚动直到结束）</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">流式输出结束。</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span><span class="string">&quot;</span></span><br></pre></td></tr></table></figure>
-
+        <h1 id="langchain-basic"><a href="#langchain-basic" class="headerlink" title="langchain-basic"></a>langchain-basic</h1>
+        
+          <p class="article-more-link">
+            <a href="/2025/12/10/langchain-basic/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/12/10/langchain-basic/" data-id="cmiyrsnq10000dcqw89ondvst" data-title="langchain-basic" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/12/10/langchain-basic/" data-id="cmizfy2a20003nwqw49l0gxt8" data-title="langchain-basic" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -157,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/12/09/langchain-01/" data-id="cmiyra1kn0000p8qw3l5zajju" data-title="langchain-01" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/12/09/langchain-01/" data-id="cmizfy2a10002nwqw5lwqeqpl" data-title="langchain-01" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -195,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/30/1/" data-id="cmiyra1kq0001p8qwdc1p3rvy" data-title="1" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/30/1/" data-id="cmizfy29x0000nwqw1nzj1apj" data-title="1" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -246,7 +242,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/30/hello-world/" data-id="cmiyra1kr0002p8qwame31095" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/30/hello-world/" data-id="cmizfy2a00001nwqw87w85uez" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
