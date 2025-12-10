@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>xingyao6f Blog</title>
+  <title>xy6f 的 小窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta property="og:type" content="website">
-<meta property="og:title" content="xingyao6f Blog">
+<meta property="og:title" content="xy6f 的 小窝">
 <meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="xingyao6f Blog">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="og:site_name" content="xy6f 的 小窝">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="xy6f">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="xingyao6f Blog" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="xy6f 的 小窝" type="application/atom+xml">
   
   
     <link rel="shortcut icon" href="/favicon.png">
@@ -41,11 +41,11 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">xingyao6f Blog</a>
+        <a href="/" id="logo">xy6f 的 小窝</a>
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">xingyao6f Blog </a>
+          <a href="/" id="subtitle">xingyao6f·nest </a>
         </h2>
       
     </div>
@@ -61,12 +61,12 @@
       <nav id="sub-nav">
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
       </div>
     </div>
   </div>
@@ -106,92 +106,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/12/10/langchain-basic/" data-id="cmizfy2a20003nwqw49l0gxt8" data-title="langchain-basic" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-langchain-01" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/12/09/langchain-01/" class="article-date">
-  <time class="dt-published" datetime="2025-12-09T15:45:55.000Z" itemprop="datePublished">2025-12-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/12/09/langchain-01/">langchain-01</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="langchain-basic"><a href="#langchain-basic" class="headerlink" title="langchain-basic"></a>langchain-basic</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>终端输入     </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install langchain</span><br><span class="line"></span><br><span class="line">pip install langchain-openai</span><br></pre></td></tr></table></figure>
-
-<h2 id="基础代理创建"><a href="#基础代理创建" class="headerlink" title="基础代理创建"></a>基础代理创建</h2><p> </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_openai <span class="keyword">import</span> ChatOpenAI</span><br><span class="line"></span><br><span class="line">llm = ChatOpenAI(</span><br><span class="line">    model_name=<span class="string">&quot;model-name&quot;</span>,<span class="comment">#模型名称</span></span><br><span class="line">    api_key=<span class="string">&quot;api-key&quot;</span>,</span><br><span class="line">    base_url=<span class="string">&quot;url&quot;</span>,</span><br><span class="line">    temperature=(<span class="number">0.0</span>-<span class="number">1.0</span>),<span class="comment">#越大输出越随机，越小输出越准确</span></span><br><span class="line">    timeout=<span class="number">60</span>,<span class="comment">#请求超时时间（s）</span></span><br><span class="line">    max_tokens=<span class="number">10</span>,<span class="comment">#最大token输出</span></span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#简单会话</span></span><br><span class="line"></span><br><span class="line">resp=llm.invoke(<span class="string">&quot;message&quot;</span>)<span class="comment">#message为人为输入，invoke接口回答</span></span><br><span class="line"><span class="built_in">print</span>(resp)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(resp))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#流式输出</span></span><br><span class="line">resp=llm.stream(<span class="string">&quot;message&quot;</span>)<span class="comment">#message为人为输入，invoke接口回答</span></span><br><span class="line"><span class="keyword">for</span> funk <span class="keyword">in</span> resp:</span><br><span class="line">    <span class="built_in">print</span>(funk, end=<span class="string">&quot;&quot;</span>, flush=<span class="literal">True</span>)</span><br><span class="line"><span class="comment">#flush=True 的核心作用是 强制立即刷新输出缓冲区，让模型的响应片段实时显示在终端 / 控制台，避免所有内容 “憋到最后一次性输出”</span></span><br><span class="line"><span class="comment">#end=&quot;\n&quot;，这里改成空字符串，就是为了不自动换行，让流式片段连起来</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">这是没有flush=true：</span></span><br><span class="line"><span class="string">模型正在流式输出：</span></span><br><span class="line"><span class="string">黑洞是宇宙中一种引力极强的天体，连光都无法从它的事件视界逃脱...</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">流式输出结束。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">这是有flush=true：</span></span><br><span class="line"><span class="string">模型正在流式输出：</span></span><br><span class="line"><span class="string">黑</span></span><br><span class="line"><span class="string">洞</span></span><br><span class="line"><span class="string">是</span></span><br><span class="line"><span class="string">宇</span></span><br><span class="line"><span class="string">宙</span></span><br><span class="line"><span class="string">中</span></span><br><span class="line"><span class="string">一</span></span><br><span class="line"><span class="string">种</span></span><br><span class="line"><span class="string">引</span></span><br><span class="line"><span class="string">力</span></span><br><span class="line"><span class="string">极</span></span><br><span class="line"><span class="string">强</span></span><br><span class="line"><span class="string">的</span></span><br><span class="line"><span class="string">天</span></span><br><span class="line"><span class="string">体</span></span><br><span class="line"><span class="string">...（持续滚动直到结束）</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">流式输出结束。</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span><span class="string">&quot;</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/12/09/langchain-01/" data-id="cmizfy2a10002nwqw5lwqeqpl" data-title="langchain-01" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2025/05/30/1/" class="article-date">
-  <time class="dt-published" datetime="2025-05-30T09:14:20.000Z" itemprop="datePublished">2025-05-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2025/05/30/1/">1</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/30/1/" data-id="cmizfy29x0000nwqw1nzj1apj" data-title="1" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/12/10/langchain-basic/" data-id="cmizrohdy0001ooqw6wx5hl0h" data-title="langchain-basic" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -242,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/05/30/hello-world/" data-id="cmizfy2a00001nwqw87w85uez" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/05/30/hello-world/" data-id="cmizrohdv0000ooqw2hqu27vc" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -270,9 +185,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">December 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">May 2025</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">十二月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">五月 2025</a></li></ul>
     </div>
   </div>
 
@@ -280,20 +195,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
         
           <li>
             <a href="/2025/12/10/langchain-basic/">langchain-basic</a>
-          </li>
-        
-          <li>
-            <a href="/2025/12/09/langchain-01/">langchain-01</a>
-          </li>
-        
-          <li>
-            <a href="/2025/05/30/1/">1</a>
           </li>
         
           <li>
@@ -313,7 +220,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2025 John Doe<br>
+      &copy; 2025 xy6f<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
