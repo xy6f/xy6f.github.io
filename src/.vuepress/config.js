@@ -8,8 +8,8 @@ export default defineUserConfig({
     description: '记录学习与生活，分享技术与思考',
     lang: 'zh-CN',
 
-    // GitHub Pages 部署路径
-    base: '/clrlov.github.io/',
+    // GitHub Pages 部署路径（用户站点设为 /）
+    base: '/',
 
     bundler: viteBundler(),
 
