@@ -25,7 +25,7 @@ export default defineUserConfig({
             {
                 text: '文章',
                 icon: 'pen-to-square',
-                link: '/article/',
+                link: '/posts/',
             },
             {
                 text: '类别',
@@ -48,31 +48,12 @@ export default defineUserConfig({
         blog: {
             name: 'xy6f',
             description: '记录学习与生活，分享技术与思考',
-            intro: '/preface/intro',
+            // 只识别 posts 文件夹下的文章
+            filter: (page) => page.path.startsWith('/posts/'),
         },
 
-        // 侧边栏
-        sidebar: {
-            '/preface/': [
-                {
-                    text: '前言',
-                    collapsible: false,
-                    children: [
-                        { text: '内容介绍', link: '/preface/intro' },
-                        { text: '使用指南', link: '/preface/guide' },
-                    ],
-                },
-            ],
-            '/Algorithm/': [
-                {
-                    text: '算法学习',
-                    collapsible: false,
-                    children: [
-                        { text: '分治法', link: '/Algorithm/DivideAndConquer' },
-                    ],
-                },
-            ],
-        },
+        // 侧边栏（添加文章后在此配置）
+        sidebar: 'structure',
 
         // 页脚
         footer: '© 2026 xy6f的博客',
