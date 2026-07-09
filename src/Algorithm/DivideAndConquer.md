@@ -1,6 +1,11 @@
 ---
 title: 分治法
 lang: zh-CN
+category: 算法
+tag:
+  - 分治法
+  - 排序
+date: 2026-07-09
 ---
 
 # 分治法 (Divide and Conquer)

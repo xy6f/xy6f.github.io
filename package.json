@@ -20,6 +20,7 @@
   "type": "module",
   "devDependencies": {
     "@vuepress/bundler-vite": "2.0.0-rc.30",
+    "@vuepress/plugin-blog": "2.0.0-rc.131",
     "@vuepress/theme-default": "2.0.0-rc.131",
     "sass-embedded": "^1.100.0",
     "vue": "^3.5.39",

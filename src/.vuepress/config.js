@@ -18,8 +18,8 @@ export default defineUserConfig({
         navbar: [
             { text: 'Home', link: '/' },
             { text: '文章', link: '/preface/intro' },
-            { text: '类别', link: '/preface/intro' },
-            { text: 'Tag', link: '/preface/intro' },
+            { text: '类别', link: '/Algorithm/DivideAndConquer' },
+            { text: 'Tag', link: '/preface/guide' },
             { text: '时间线', link: '/preface/intro' },
         ],
 
