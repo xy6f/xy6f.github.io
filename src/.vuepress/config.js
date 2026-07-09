@@ -16,22 +16,11 @@ export default defineUserConfig({
     theme: defaultTheme({
         // 导航栏
         navbar: [
-            { text: '首页', link: '/' },
-            {
-                text: '文章',
-                children: [
-                    { text: '前言', link: '/preface/intro' },
-                    { text: '算法学习', link: '/Algorithm/DivideAndConquer' },
-                ],
-            },
-            {
-                text: '关于',
-                children: [
-                    { text: 'Github', link: 'https://github.com/' },
-                    { text: '知乎', link: 'https://www.zhihu.com/' },
-                    { text: '掘金', link: 'https://juejin.cn/' },
-                ],
-            },
+            { text: 'Home', link: '/' },
+            { text: '文章', link: '/preface/intro' },
+            { text: '类别', link: '/preface/intro' },
+            { text: 'Tag', link: '/preface/intro' },
+            { text: '时间线', link: '/preface/intro' },
         ],
 
         // 侧边栏（只在文章页面显示）
