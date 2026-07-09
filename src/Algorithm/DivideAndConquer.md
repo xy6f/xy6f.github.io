@@ -1,7 +1,8 @@
 ---
 title: 分治法
 lang: zh-CN
-category: 算法
+category:
+  - 算法
 tag:
   - 分治法
   - 排序

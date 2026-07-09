@@ -1,6 +1,6 @@
 import { viteBundler } from '@vuepress/bundler-vite'
-import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress'
+import { hopeTheme } from 'vuepress-theme-hope'
 
 export default defineUserConfig({
     // 站点基本信息
@@ -13,17 +13,45 @@ export default defineUserConfig({
 
     bundler: viteBundler(),
 
-    theme: defaultTheme({
+    theme: hopeTheme({
+        // 启用博客功能
+        plugins: {
+            blog: true,
+        },
+
         // 导航栏
         navbar: [
-            { text: 'Home', link: '/' },
-            { text: '文章', link: '/preface/intro' },
-            { text: '类别', link: '/Algorithm/DivideAndConquer' },
-            { text: 'Tag', link: '/preface/guide' },
-            { text: '时间线', link: '/preface/intro' },
+            '/',
+            {
+                text: '文章',
+                icon: 'pen-to-square',
+                link: '/article/',
+            },
+            {
+                text: '类别',
+                icon: 'list',
+                link: '/category/',
+            },
+            {
+                text: 'Tag',
+                icon: 'tag',
+                link: '/tag/',
+            },
+            {
+                text: '时间线',
+                icon: 'clock-rotate-left',
+                link: '/timeline/',
+            },
         ],
 
-        // 侧边栏（只在文章页面显示）
+        // 博客配置
+        blog: {
+            name: 'xy6f',
+            description: '记录学习与生活，分享技术与思考',
+            intro: '/preface/intro',
+        },
+
+        // 侧边栏
         sidebar: {
             '/preface/': [
                 {
@@ -50,7 +78,27 @@ export default defineUserConfig({
         footer: '© 2026 xy6f的博客',
         displayFooter: true,
 
-        // 首页不显示侧边栏
-        home: true,
+        // 主页配置
+        home: '/home',
+
+        // 文章列表配置
+        article: {
+            excerptLength: 200,
+        },
+
+        // 分类配置
+        category: {
+            excerptLength: 100,
+        },
+
+        // 标签配置
+        tag: {
+            excerptLength: 100,
+        },
+
+        // 时间线配置
+        timeline: {
+            excerptLength: 100,
+        },
     }),
 })

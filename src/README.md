@@ -1,7 +1,29 @@
 ---
 home: true
+title: 首页
 heroText: xy6f的博客
 tagline: 记录学习与生活，分享技术与思考
+actions:
+  - text: 开始阅读
+    link: /article/
+    type: primary
+  - text: 关于我
+    link: /preface/intro
+    type: secondary
+
+features:
+  - title:  技术笔记
+    icon: pen-to-square
+    details: 记录前端、后端、算法等技术学习内容
+    link: /article/
+  - title: 🧠 算法学习
+    icon: brain
+    details: 分治法、动态规划、贪心算法等经典算法解析
+    link: /Algorithm/DivideAndConquer
+  - title: 💡 思考与总结
+    icon: lightbulb
+    details: 学习过程中的思考、经验总结与最佳实践
+    link: /preface/intro
 ---
 
 ## 最新文章

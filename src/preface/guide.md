@@ -1,7 +1,8 @@
 ---
 title: 使用指南
 lang: zh-CN
-category: 前言
+category:
+  - 前言
 tag:
   - 指南
 date: 2026-07-09
