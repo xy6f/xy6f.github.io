@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output
+src/.vuepress/dist/
+src/.vuepress/.cache/
+src/.vuepress/.temp/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

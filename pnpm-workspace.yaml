@@ -1,2 +1,4 @@
 allowBuilds:
-  esbuild: false
+  esbuild: true
+  highlight.js: true
+  vue-demi: true
