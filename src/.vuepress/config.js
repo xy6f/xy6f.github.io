@@ -17,10 +17,15 @@ export default defineUserConfig({
         // 导航栏
         navbar: [
             { text: '首页', link: '/' },
-            { text: '前言', link: '/preface/intro' },
-            { text: '算法学习', link: '/Algorithm/DivideAndConquer' },
             {
-                text: '社交链接',
+                text: '文章',
+                children: [
+                    { text: '前言', link: '/preface/intro' },
+                    { text: '算法学习', link: '/Algorithm/DivideAndConquer' },
+                ],
+            },
+            {
+                text: '关于',
                 children: [
                     { text: 'Github', link: 'https://github.com/' },
                     { text: '知乎', link: 'https://www.zhihu.com/' },
@@ -29,7 +34,7 @@ export default defineUserConfig({
             },
         ],
 
-        // 侧边栏
+        // 侧边栏（只在文章页面显示）
         sidebar: {
             '/preface/': [
                 {
@@ -53,7 +58,10 @@ export default defineUserConfig({
         },
 
         // 页脚
-        footer: 'xy6f的博客 | MIT Licensed',
+        footer: '© 2026 xy6f的博客',
         displayFooter: true,
+
+        // 首页不显示侧边栏
+        home: true,
     }),
 })

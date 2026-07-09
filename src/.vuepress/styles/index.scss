@@ -1,0 +1,253 @@
+// 首页样式优化
+.home {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  .hero {
+    text-align: center;
+    padding: 3rem 0;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .description {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .theme-default-content {
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #eee;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+
+      a {
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #667eea;
+        }
+      }
+    }
+
+    blockquote {
+      margin: 0.5rem 0;
+      padding: 0.5rem 1rem;
+      border-left: 4px solid #667eea;
+      background: #f8f9fa;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    hr {
+      margin: 2rem 0;
+      border: none;
+      border-top: 1px solid #eee;
+    }
+  }
+}
+
+// 文章页面样式优化
+.page {
+  .theme-default-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #eee;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      border-left: 4px solid #667eea;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: #444;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: #333;
+    }
+
+    code {
+      background: #f5f5f5;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: #2d2d2d;
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+
+      code {
+        background: none;
+        padding: 0;
+        color: #f8f8f2;
+      }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+
+      th, td {
+        padding: 0.8rem;
+        border: 1px solid #ddd;
+        text-align: left;
+      }
+
+      th {
+        background: #f8f9fa;
+        font-weight: 600;
+      }
+
+      tr:nth-child(even) {
+        background: #fafafa;
+      }
+    }
+
+    blockquote {
+      margin: 1rem 0;
+      padding: 1rem 1.5rem;
+      border-left: 4px solid #667eea;
+      background: #f8f9fa;
+      border-radius: 0 8px 8px 0;
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+
+      li {
+        margin: 0.5rem 0;
+        line-height: 1.8;
+      }
+    }
+
+    a {
+      color: #667eea;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #764ba2;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// 导航栏样式优化
+.navbar {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  .site-name {
+    font-weight: 600;
+  }
+
+  .nav-links {
+    a {
+      font-weight: 500;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #667eea;
+      }
+    }
+  }
+}
+
+// 侧边栏样式优化
+.sidebar {
+  .sidebar-group {
+    .sidebar-heading {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .sidebar-links {
+      .sidebar-link {
+        transition: all 0.3s;
+        border-radius: 4px;
+        margin: 2px 0;
+
+        &:hover {
+          background: #f0f0f0;
+          padding-left: 1.2rem;
+        }
+
+        &.active {
+          background: #667eea;
+          color: white;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+// 页脚样式优化
+.footer {
+  text-align: center;
+  padding: 2rem;
+  color: #999;
+  font-size: 0.9rem;
+  border-top: 1px solid #eee;
+  margin-top: 3rem;
+}
+
+// 响应式优化
+@media (max-width: 719px) {
+  .home {
+    padding: 1rem;
+
+    .hero {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .page {
+    .theme-default-content {
+      padding: 1rem;
+    }
+  }
+}
