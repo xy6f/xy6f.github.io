@@ -1,85 +1,83 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
-import { hopeTheme } from 'vuepress-theme-hope'
+import { plumeTheme } from 'vuepress-theme-plume'
 
 export default defineUserConfig({
-    // 站点基本信息
     title: 'xy6f的博客',
     description: '记录学习与生活，分享技术与思考',
     lang: 'zh-CN',
-
-    // GitHub Pages 部署路径（用户站点设为 /）
     base: '/',
+
+    head: [
+        ['style', {}, `
+.vp-home-banner .banner-mask {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+.dark .vp-home-banner .banner-mask {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.35) !important;
+}
+.vp-posts .vp-post-item {
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border: 1px solid var(--vp-c-divider, rgba(0,0,0,0.08));
+  transition: all 0.3s ease;
+}
+.vp-posts .vp-post-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: var(--vp-c-brand-1, #3a7bd5);
+}
+.dark .vp-posts .vp-post-item:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+.vp-posts .vp-pagination {
+  display: none !important;
+}
+.vp-posts .vp-posts-nav {
+  margin-bottom: 20px;
+}
+        `],
+    ],
 
     bundler: viteBundler(),
 
-    theme: hopeTheme({
-        // 启用博客功能
-        plugins: {
-            blog: true,
-        },
-
+    theme: plumeTheme({
         // 导航栏
         navbar: [
-            '/',
-            {
-                text: '文章',
-                icon: 'pen-to-square',
-                link: '/posts/',
-            },
-            {
-                text: '类别',
-                icon: 'list',
-                link: '/category/',
-            },
-            {
-                text: 'Tag',
-                icon: 'tag',
-                link: '/tag/',
-            },
-            {
-                text: '时间线',
-                icon: 'clock-rotate-left',
-                link: '/timeline/',
-            },
+            { text: 'Home', link: '/' },
+            { text: '文章列表', link: '/posts/' },
+            { text: '关于我', link: '/about/' },
+            { text: 'GitHub', link: 'https://github.com/xy6f' },
         ],
-
-        // 博客配置
-        blog: {
-            name: 'xy6f',
-            description: '记录学习与生活，分享技术与思考',
-            // 只识别 posts 文件夹下的文章
-            filter: (page) => page.path.startsWith('/posts/'),
-        },
-
-        // 侧边栏（添加文章后在此配置）
-        sidebar: 'structure',
 
         // 页脚
         footer: '© 2026 xy6f的博客',
-        displayFooter: true,
 
-        // 主页配置
-        home: '/home',
+        // 中文标签
+        tagText: '标签',
+        categoryText: '分类',
+        
 
-        // 文章列表配置
-        article: {
-            excerptLength: 200,
+        // 博客配置
+        blog: {
+            listText: '文章列表',
         },
 
-        // 分类配置
-        category: {
-            excerptLength: 100,
-        },
-
-        // 标签配置
-        tag: {
-            excerptLength: 100,
-        },
-
-        // 时间线配置
-        timeline: {
-            excerptLength: 100,
-        },
+        // 集合配置
+        collections: [
+            {
+                type: 'post',
+                dir: 'posts',
+                title: '文章列表',
+                tagsText: '标签',
+                categoriesText: '分类',
+                archivesText: '归档',
+                pagination: { perPage: 4 },
+            },
+        ],
     }),
 })
