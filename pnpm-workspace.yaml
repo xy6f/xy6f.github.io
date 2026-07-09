@@ -2,3 +2,4 @@ allowBuilds:
   esbuild: true
   highlight.js: true
   vue-demi: true
+  '@parcel/watcher': true
