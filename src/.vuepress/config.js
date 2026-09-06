@@ -57,10 +57,12 @@ export default defineUserConfig({
         // 页脚
         footer: '© 2026 xy6f的博客',
 
+        // 最后更新时间
+        lastUpdated: true,
+
         // 中文标签
         tagText: '标签',
         categoryText: '分类',
-        
 
         // 博客配置
         blog: {
@@ -77,6 +79,14 @@ export default defineUserConfig({
                 categoriesText: '分类',
                 archivesText: '归档',
                 pagination: { perPage: 4 },
+                // 文章元数据显示
+                meta: {
+                    tags: true,
+                    createTime: 'long',    // 显示完整创建时间
+                    lastUpdated: true,     // 显示最后更新时间
+                    readingTime: true,     // 显示阅读时间
+                    wordCount: true,       // 显示字数统计
+                },
             },
         ],
     }),
